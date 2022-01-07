@@ -30,6 +30,9 @@ gem "jbuilder"
 # Authentication provided by Devise
 gem "devise", "~> 4.8"
 
+# Pretty printing
+gem "awesome_print", "~> 1.9"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -73,3 +76,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
