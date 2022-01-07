@@ -1,11 +1,15 @@
 # README
 The rails-core is a pre-configured rails 7 app with the default add-ons I currently prefer for new apps. That list is presently:
 * Postgres
-* Devise auth, with sign-in/up/out, email validation, reset password, and user and admin controllers
+* Devise auth. Includes:
+  * Sign-in/up/out
+  * Email validation
+  * Password reset
+  * Seperate authenticated controllers for standard users and admins
 * Tailwind UI
 
 ## Dependencies
-* Ruby version: 3.01
+* Ruby version: 3.0.1p64
 * System dependencies: ruby, rails, postgres
 
 ## Setup
