@@ -1,11 +1,11 @@
 # README
 The rails-core is a pre-configured rails 7 app with the default add-ons I currently prefer for new apps. That list is presently:
 * Postgres
-* Devise auth. Includes:
+* Devise authentication. Includes:
   * Sign-in/up/out
   * Email validation
   * Password reset
-  * Seperate authenticated controllers for standard users and admins
+  * Separate authenticated controllers for standard users and admins
 * Tailwind UI
 
 ## Dependencies
@@ -15,9 +15,9 @@ The rails-core is a pre-configured rails 7 app with the default add-ons I curren
 ## Setup
 1. Fork this repo into a new project, then clone and download it.
 2. Run `rake db:setup` to create, migrate, and seed test & dev databases
+3. Delete the `/config/credentials/.gitignore` file. This will allow your encrypted config files to be commited with git. Don't worry: the top-level `.gitignore` still includes ignoring the test, development, and production keys from the credentials folder!
 
-
-3. When you're ready to setup a production database, delete the `production.yml.enc` file in credentials if one exists. Then create your own via `EDITOR=vim rails credentials:edit -e production`. The final file should have the shape:
+4. When you're ready to setup a production database create a `/config/credentials/production.yml.enc` file (and key) via `EDITOR=vim rails credentials:edit -e production`. The final file should look like the following but include your production database creds:
 
 ```
 postgres:

@@ -28,4 +28,6 @@
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
-/config/credentials/*
+/config/credentials/test.key
+/config/credentials/development.key
+/config/credentials/production.key
