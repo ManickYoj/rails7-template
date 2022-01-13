@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Tailwind uses a 16px default, which is a bit big for my taste as a basis */
+  html { font-size: 12px; }
+  a { @apply text-cyan-700; }
+  a:hover { @apply text-cyan-900; }
+
+  h1 { @apply text-2xl font-bold mt-4; }
+  h2 { @apply text-xl font-bold mt-4; }
+  h3, h4 { @apply text-lg font-bold mt-2; }
+  h5, h6 { @apply text-base font-bold mt-2; }
+
+  button,
+  button[type=submit],
+  button[type=reset],
+  button[type=button],
+  input[type=submit] { @apply bg-slate-300 px-2 py-1; }
+};
+
+@layer components {
+  .flash { @apply  border text-sm rounded px-2 py-2 mt-2; }
+}
