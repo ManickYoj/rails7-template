@@ -29,13 +29,16 @@ postgres:
 
 ## Running the server
 ```
-# Run postgres. Only needs to be run once per restart. You can also configure it to run automatically on startup
+# Run postgres. Only needs to be run once per restart.
+# You can also configure it to run automatically on startup
 sudo service postgresql start
 
-# Use Foreman to run the server and recompile CSS/JS assets with any changes
+# Use Foreman to run the server and recompile CSS/JS
+# assets with any changes
 bin/dev
 
-# Alternately, to run just the server without being able to reload changes to the CSS/JS
+# Alternately, to run just the server without being able
+# to reload changes to the CSS/JS
 rails s
 
 # And if you do need to do a one off recompilation of assets
