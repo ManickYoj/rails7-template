@@ -18,7 +18,7 @@ This is a pre-configured rails 7 app with some additional libraries and config t
 1. Copy this template, clone it, and download it.
 2. Run `rake db:setup` to create, migrate, and seed test & dev databases
 3. Delete the `/config/credentials/.gitignore` file. This will allow your encrypted config files to be commited with git. Don't worry: the top-level `.gitignore` still includes ignoring the test, development, and production keys from the credentials folder!
-4. Create test/dev/production credential files. Without one for each environment you use, you'll get a NoMethodError when executing in that environment because ERB will try to load in a key from it's environment's credentials file. To do this, create a `/config/credentials/<environment>.yml.enc` file (and key) via `EDITOR=nano rails credentials:edit -e <environment>`. The final file should look like the following but include your creds or an empty key if you don't need creds for that environment:
+4. Create test/dev/production credential files. Without one for each environment you use, you'll get a NoMethodError when executing in that environment because ERB will try to load in a key from it's environment's credentials file. To do this, create a `/config/credentials/<environment>.yml.enc` file (and key) via `EDITOR=nano rails credentials:edit -e <environment>`. The final file should look like the following but include your creds. Having a blank instead of your creds will work fine if you don't need creds for that environment:
 
 ```
 postgres:
@@ -29,23 +29,18 @@ postgres:
 
 ## Running the server
 ```
-# Run postgres
+# Run postgres. Only needs to be run once per restart. You can also configure it to run automatically on startup
 sudo service postgresql start
 
-# Build the front-end assets. If you're messing with the CSS, you'll probably
-# need to run this and reload the server to view your changes. This is a pain.
-# I can't figure out how to recompile automatically in dev or include all the
-# tailwind classes in dev only.
-rails assets:precompile
+# Use Foreman to run the server and recompile CSS/JS assets with any changes
+bin/dev
 
-# Run the server
+# Alternately, to run just the server without being able to reload changes to the CSS/JS
 rails s
 
-# If working on CSS, just do both
-rails assets:precompile && rails s
+# And if you do need to do a one off recompilation of assets
+rails assets:precompile
 ```
-
-If you change the CSS or Javascript, you'll likely need to rebuild the assets before running the server.
 
 ## Running the test suite
 ```
