@@ -16,9 +16,8 @@ This is a pre-configured rails 7 app with some additional libraries and config t
 
 ## Setup
 1. Copy this template, clone it, and download it.
-2. Run `rake db:setup` to create, migrate, and seed test & dev databases
-3. Delete the `/config/credentials/.gitignore` file. This will allow your encrypted config files to be commited with git. Don't worry: the top-level `.gitignore` still includes ignoring the test, development, and production keys from the credentials folder!
-4. Create test/dev/production credential files. Without one for each environment you use, you'll get a NoMethodError when executing in that environment because ERB will try to load in a key from it's environment's credentials file. To do this, create a `/config/credentials/<environment>.yml.enc` file (and key) via `EDITOR=nano rails credentials:edit -e <environment>`. The final file should look like the following but include your creds. Having a blank instead of your creds will work fine if you don't need creds for that environment:
+2. Delete the `/config/credentials/.gitignore` file. This will allow your encrypted config files to be commited with git. Don't worry: the top-level `.gitignore` still includes ignoring the test, development, and production keys from the credentials folder!
+3. Create test/dev/production credential files. Without one for each environment you use, you'll get a NoMethodError when executing in that environment because ERB will try to load in a key from it's environment's credentials file. To do this, create a `/config/credentials/<environment>.yml.enc` file (and key) via `EDITOR=nano rails credentials:edit -e <environment>`. The final file should look like the following but include your creds. Having a blank instead of your creds will work fine if you don't need creds for that environment:
 
 ```
 postgres:
@@ -26,6 +25,8 @@ postgres:
   username: <eg. rails_core_developer>
   password: <eg. 1234>
 ```
+
+4. Run `rake db:setup` to create, migrate, and seed test & dev databases
 
 ## Running the server
 ```
