@@ -26,7 +26,9 @@ postgres:
   password: <eg. 1234>
 ```
 
-4. Run `rake db:setup` to create, migrate, and seed test & dev databases
+4. Run `bundle install`to install back end dependencies
+5. Run `rake db:setup` to create, migrate, and seed test & dev databases
+6. Run `yarn install` to install front-end dependencies
 
 ## Running the server
 ```
